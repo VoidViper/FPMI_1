@@ -4,7 +4,6 @@ namespace Matrix_Calculator
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             int rowsA, rowsB, colA, colB;
@@ -67,13 +66,13 @@ namespace Matrix_Calculator
             switch (operation)
             {
                 case "+":
-                    MatrixCalc.Sum();
+                    MatrixAdd;
                     break;
                 case "-":
-                    MatrixCalc.Subtract();
+                    MatrixSub;
                     break;
                 case "*":
-                    MatrixCalc.Multiply();
+                    MatrixMultiply();
                     break;
             }
             */
