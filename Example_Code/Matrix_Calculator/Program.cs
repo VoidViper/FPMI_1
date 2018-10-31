@@ -107,7 +107,7 @@ namespace Matrix_Calculator
                 }
                 if (operation == "*")
                 {
-                    Console.WriteLine("Multiplication");
+                    Console.WriteLine("Multiplication to be added");
                 }
             }
             else
