@@ -9,7 +9,9 @@ namespace Matrix_Calculator
         {
             int rowsA, rowsB, colA, colB;
             string operation;
-
+            Console.WriteLine("This program adds, subtracts and multiplies matrices. If you enter a square matrix");
+            Console.WriteLine("you will be able to add, subtract and multiply. If not, you will only see the matrices you've entered.");
+            Console.WriteLine();
             Console.Write("Write the number of rows in Matrix A:");
             rowsA = Convert.ToInt32(Console.ReadLine());
             Console.Write("Write the number of cols in Matrix A:");
@@ -58,26 +60,60 @@ namespace Matrix_Calculator
                 }
                 Console.WriteLine();
             }
-
-
-            Console.WriteLine("What operation would you like to perform? (+,-,*)");
-            operation = Console.ReadLine();
-
-            /*
-            switch (operation)
+            if (rowsA == colA && rowsB == colB)
             {
-                case "+":
-                    MatrixCalc.Sum();
-                    break;
-                case "-":
-                    MatrixCalc.Subtract();
-                    break;
-                case "*":
-                    MatrixCalc.Multiply();
-                    break;
+                int[,] Buffer = new int[Math.Max(rowsA, rowsB), Math.Max(colA, colB)];
+                int n = colA;
+
+                Console.WriteLine("What operation would you like to perform? (+,-,*)");
+                operation = Console.ReadLine();
+
+                //Thanks to Mincho da brain
+                if (operation == "+")
+                {
+                    Console.WriteLine("Addition");
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int j = 0; j < n; j++)
+                        {
+                            Buffer[i, j] = matrixA[i, j] + matrixB[i, j];
+                        }
+                    }
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write("");
+                        for (int j = 0; j < n; j++)
+                            Console.Write($"{Buffer[i, j]} ");
+                        Console.WriteLine();
+                    }
+                }
+                if (operation == "-")
+                {
+                    Console.WriteLine("Subtraction");
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int j = 0; j < n; j++)
+                        {
+                            Buffer[i, j] = matrixA[i, j] - matrixB[i, j];
+                        }
+                    }
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write("");
+                        for (int j = 0; j < n; j++)
+                            Console.Write($"{Buffer[i, j]} ");
+                        Console.WriteLine();
+                    }
+                }
+                if (operation == "*")
+                {
+                    Console.WriteLine("Multiplication");
+                }
             }
-            */
-            Console.ReadLine();
+            else
+            {
+                Console.WriteLine("The matrices are not square. This is the end of the program");
+            }
 
         }
     }
