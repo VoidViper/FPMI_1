@@ -22,7 +22,7 @@ namespace Matrix_Calculator
             {
                 for (int j = 0; j < colA; j++)
                 {
-                    Console.Write($"Enter element ({i},{j}): ");
+                    Console.Write($"Enter element ({i+1},{j+1}): ");
                     matrixA[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
             }
@@ -46,7 +46,7 @@ namespace Matrix_Calculator
             {
                 for (int j = 0; j < colB; j++)
                 {
-                    Console.Write($"Enter element ({i},{j}): ");
+                    Console.Write($"Enter element ({i+1},{j+1}): ");
                     matrixB[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
             }
@@ -101,7 +101,7 @@ namespace Matrix_Calculator
                     {
                         Console.Write("");
                         for (int j = 0; j < n; j++)
-                            Console.Write($"{Buffer[i, j]} ");
+                            Console.Write($" {Buffer[i, j]} ");
                         Console.WriteLine();
                     }
                 }
