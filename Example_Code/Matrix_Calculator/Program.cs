@@ -60,14 +60,23 @@ namespace Matrix_Calculator
                 }
                 Console.WriteLine();
             }
-            if (rowsA == colA && rowsB == colB)
+            int[,] Buffer = new int[Math.Max(rowsA, rowsB), Math.Max(colA, colB)];
+            int n = colA;
+            Console.WriteLine("What operation would you like to perform? (+,-,*)");
+            operation = Console.ReadLine();
+            if (rowsA != colA && rowsB != colB && colA == rowsB)
             {
-                int[,] Buffer = new int[Math.Max(rowsA, rowsB), Math.Max(colA, colB)];
-                int n = colA;
-
-                Console.WriteLine("What operation would you like to perform? (+,-,*)");
-                operation = Console.ReadLine();
-
+                if (operation == "*")
+                {
+                    Console.WriteLine("Multiplication phase 1");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid operation!");
+                }
+            }
+            else if (rowsA == colA && rowsB == colB)
+            {
                 //Thanks to Mincho da brain
                 if (operation == "+")
                 {
@@ -83,7 +92,7 @@ namespace Matrix_Calculator
                     {
                         Console.Write("");
                         for (int j = 0; j < n; j++)
-                            Console.Write($"{Buffer[i, j]} ");
+                            Console.Write($" {Buffer[i, j]} ");
                         Console.WriteLine();
                     }
                 }
@@ -107,14 +116,13 @@ namespace Matrix_Calculator
                 }
                 if (operation == "*")
                 {
-                    Console.WriteLine("Multiplication to be added");
+                    Console.WriteLine("Multiplication phase 2");
                 }
             }
             else
             {
-                Console.WriteLine("The matrices are not square. This is the end of the program");
+                Console.WriteLine("Error! Cannot do operations on these matrices. Exiting.");
             }
-
         }
     }
 }
