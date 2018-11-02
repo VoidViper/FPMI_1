@@ -24,7 +24,7 @@ namespace Matrix_Calculator
                 colA = Convert.ToInt32(Console.ReadLine());
                 int[,] matrixA = new int[rowsA, colA];
 
-                for (int i = 0; i < rowsA; i++)
+                for (int i = 0; i < rowsA; i++) //Entering the elements of matrix A
                 {
                     for (int j = 0; j < colA; j++)
                     {
@@ -33,7 +33,7 @@ namespace Matrix_Calculator
                     }
                 }
 
-                Console.WriteLine("MatrixA is: ");
+                Console.WriteLine("MatrixA is: "); //Printing matrix A
                 for (int i = 0; i < rowsA; i++)
                 {
                     for (int j = 0; j < colA; j++)
@@ -48,7 +48,7 @@ namespace Matrix_Calculator
                 Console.Write("Write the number of cols in Matrix B:");
                 colB = Convert.ToInt32(Console.ReadLine());
                 int[,] matrixB = new int[rowsB, colB];
-                for (int i = 0; i < rowsB; i++)
+                for (int i = 0; i < rowsB; i++) //Entering the elements of matrix B
                 {
                     for (int j = 0; j < colB; j++)
                     {
@@ -57,7 +57,7 @@ namespace Matrix_Calculator
                     }
                 }
 
-                Console.WriteLine("MatrixB is: ");
+                Console.WriteLine("MatrixB is: "); //Printing matrix A
                 for (int i = 0; i < rowsB; i++)
                 {
                     for (int j = 0; j < colB; j++)
@@ -96,7 +96,7 @@ namespace Matrix_Calculator
                         }*/
                         Console.WriteLine("Not square matrix multiplication WIP");
                     }
-                    else if (operation == "t")
+                    else if (operation == "t") //Transposing and printing both of the matrices
                     {
                         Console.WriteLine("Matrix A Transposed is:");
                         for (int i = 0; i < colA; i++)
@@ -126,7 +126,7 @@ namespace Matrix_Calculator
                 else if (rowsA == colA && rowsB == colB)
                 {
                     //Thanks to Mincho da brain
-                    if (operation == "+")
+                    if (operation == "+") //Adding the two matrices
                     {
                         Console.WriteLine("Addition");
                         for (int i = 0; i < n; i++)
@@ -144,7 +144,7 @@ namespace Matrix_Calculator
                             Console.WriteLine();
                         }
                     }
-                    if (operation == "-")
+                    if (operation == "-") //Subtracting the two matrices
                     {
                         Console.WriteLine("Subtraction");
                         for (int i = 0; i < n; i++)
@@ -162,7 +162,7 @@ namespace Matrix_Calculator
                             Console.WriteLine();
                         }
                     }
-                    if (operation == "*")
+                    if (operation == "*") //Multiplying the two SQUARE matrices
                     {
                         for (int i = 0; i < rowsA; i++)
                             for (int j = 0; j < colB; j++)
@@ -185,7 +185,7 @@ namespace Matrix_Calculator
                             Console.WriteLine();
                         }
                     }
-                    if (operation == "t")
+                    if (operation == "t") //Transposing the two matrices
                     {
                         Console.WriteLine("Matrix A Transposed is:");
                         for (int i = 0; i < colA; i++)
