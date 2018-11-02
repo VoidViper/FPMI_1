@@ -118,6 +118,7 @@ namespace Matrix_Calculator
                             Console.WriteLine();
                         }
                     }
+                    
                     else
                     {
                         Console.WriteLine("Invalid operation!");
@@ -206,6 +207,35 @@ namespace Matrix_Calculator
                             }
                             Console.WriteLine();
                         }
+                    }
+                }
+                else if (rowsA != colA && rowsB != colB)
+                {
+                    if (operation == "t") //Transposing and printing both of the matrices
+                    {
+                        Console.WriteLine("Matrix A Transposed is:");
+                        for (int i = 0; i < colA; i++)
+                        {
+                            for (int j = 0; j < rowsA; j++)
+                            {
+                                Console.Write(" " + matrixA[j, i] + " ");
+                            }
+                            Console.WriteLine();
+                        }
+
+                        Console.WriteLine("Matrix B Transposed is:");
+                        for (int i = 0; i < colB; i++)
+                        {
+                            for (int j = 0; j < rowsB; j++)
+                            {
+                                Console.Write(" " + matrixB[j, i] + " ");
+                            }
+                            Console.WriteLine();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid operation!");
                     }
                 }
                 else
