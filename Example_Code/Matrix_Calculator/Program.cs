@@ -12,8 +12,8 @@ namespace Matrix_Calculator
             string operation;
             bool doContinue = false;
 
-            Console.WriteLine("This program adds, subtracts and multiplies matrices. If you enter a square matrix");
-            Console.WriteLine("you will be able to add, subtract and multiply. If not, you will only see the matrices you've entered.");
+            Console.WriteLine("This program adds, subtracts, multiplies and transposes matrices. If you enter a square matrix");
+            Console.WriteLine("you will be able to add, subtract, transpose and multiply. If not, you won't be able to multiply.");
             Console.WriteLine();
 
             do
@@ -68,7 +68,7 @@ namespace Matrix_Calculator
                 }
                 int[,] Buffer = new int[Math.Max(rowsA, rowsB), Math.Max(colA, colB)];
                 int n = colA;
-                Console.WriteLine("What operation would you like to perform? (+,-,*)");
+                Console.WriteLine("What operation would you like to perform? (+,-,*,t)");
                 operation = Console.ReadLine();
                 if (rowsA != colA && rowsB != colB && colA == rowsB)
                 {
@@ -95,6 +95,28 @@ namespace Matrix_Calculator
                             Console.WriteLine();
                         }*/
                         Console.WriteLine("Not square matrix multiplication WIP");
+                    }
+                    else if (operation == "t")
+                    {
+                        Console.WriteLine("Matrix A Transposed is:");
+                        for (int i = 0; i < colA; i++)
+                        {
+                            for (int j = 0; j < rowsA; j++)
+                            {
+                                Console.Write(" " + matrixA[j, i] + " ");
+                            }
+                            Console.WriteLine();
+                        }
+
+                        Console.WriteLine("Matrix B Transposed is:");
+                        for (int i = 0; i < colB; i++)
+                        {
+                            for (int j = 0; j < rowsB; j++)
+                            {
+                                Console.Write(" " + matrixB[j, i] + " ");
+                            }
+                            Console.WriteLine();
+                        }
                     }
                     else
                     {
@@ -160,6 +182,28 @@ namespace Matrix_Calculator
                             Console.Write("");
                             for (int j = 0; j < n; j++)
                                 Console.Write($" {Buffer[i, j]} ");
+                            Console.WriteLine();
+                        }
+                    }
+                    if (operation == "t")
+                    {
+                        Console.WriteLine("Matrix A Transposed is:");
+                        for (int i = 0; i < colA; i++)
+                        {
+                            for (int j = 0; j < rowsA; j++)
+                            {
+                                Console.Write(" " + matrixA[j, i] + " ");
+                            }
+                            Console.WriteLine();
+                        }
+
+                        Console.WriteLine("Matrix B Transposed is:");
+                        for (int i = 0; i < colB; i++)
+                        {
+                            for (int j = 0; j < rowsB; j++)
+                            {
+                                Console.Write(" " + matrixB[j, i] + " ");
+                            }
                             Console.WriteLine();
                         }
                     }
