@@ -121,7 +121,7 @@ namespace Matrix_Calculator
                     
                     else
                     {
-                        Console.WriteLine("Invalid operation!");
+                        Console.WriteLine("Error! Invalid operation. Exiting.");
                     }
                 }
                 else if (rowsA == colA && rowsB == colB)
@@ -209,7 +209,7 @@ namespace Matrix_Calculator
                         }
                     }
                 }
-                else if (rowsA != colA && rowsB != colB)
+                else if (rowsA != colA && rowsB != colB) //edge case for 2 completely different matrices which can be transposed
                 {
                     if (operation == "t") //Transposing and printing both of the matrices
                     {
@@ -235,12 +235,12 @@ namespace Matrix_Calculator
                     }
                     else
                     {
-                        Console.WriteLine("Invalid operation!");
+                        Console.WriteLine("Error! Invalid operation. Exiting.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Error! Cannot do operations on these matrices. Exiting.");
+                    Console.WriteLine("Error! Invalid operation. Exiting.");
                 }
 
                 Console.Write("Do you want to continue? [y/n]: ");
