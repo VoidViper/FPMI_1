@@ -74,7 +74,7 @@ namespace Matrix_Calculator
                 {
                     if (operation == "*")
                     {
-                        /*for (int i = 0; i < rowsA; i++)
+                        for (int i = 0; i < rowsA; i++)
                             for (int j = 0; j < colB; j++)
                                 Buffer[i, j] = 0;
                         for (int i = 0; i < rowsA; i++)    
@@ -93,10 +93,10 @@ namespace Matrix_Calculator
                             for (int j = 0; j < n; j++)
                                 Console.Write($" {Buffer[i, j]} ");
                             Console.WriteLine();
-                        }*/
-                        Console.WriteLine("Not square matrix multiplication WIP");
+                        }
+                        
                     }
-                    else if (operation == "t") //Transposing and printing both of the matrices
+                    else if (operation == "t") //Transposing and printing both of the matrices i primer
                     {
                         Console.WriteLine("Matrix A Transposed is:");
                         for (int i = 0; i < colA; i++)
