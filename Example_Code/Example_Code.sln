@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCode", "TestCode\TestCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cows_and_Bulls", "Cows_and_Bulls\Cows_and_Bulls.csproj", "{DF0F22AA-6C69-4923-9FB8-D163FD606422}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morski_Chess", "Morski_Chess\Morski_Chess.csproj", "{641D4166-D2F6-47E6-87CE-75356967EED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{DF0F22AA-6C69-4923-9FB8-D163FD606422}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF0F22AA-6C69-4923-9FB8-D163FD606422}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF0F22AA-6C69-4923-9FB8-D163FD606422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{641D4166-D2F6-47E6-87CE-75356967EED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{641D4166-D2F6-47E6-87CE-75356967EED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641D4166-D2F6-47E6-87CE-75356967EED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{641D4166-D2F6-47E6-87CE-75356967EED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
