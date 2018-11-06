@@ -17,13 +17,13 @@ namespace Morski_Chess
                     switch (board[i, j])
                     {
                         case 0:
-                            Console.Write(" -- ");
+                            Console.Write(0);
                             break;
                         case 1:
-                            Console.Write(" X ");
+                            Console.Write(1);
                             break;
                         case 2:
-                            Console.Write(" O ");
+                            Console.Write(2);
                             break;
                     }
                 }
@@ -64,8 +64,16 @@ namespace Morski_Chess
 
                 Console.Write("Enter col number: ");
                 int col = Convert.ToInt32(Console.ReadLine());
-                board[row, col] = currentPlayer;
-
+                if (board[row, col] == 0 )
+                {
+                    board[row, col] = currentPlayer;
+                }
+                else
+                {
+                    Console.WriteLine("Try again. The place is occupied.");
+                    i--;
+                    currentPlayer = (currentPlayer == 2) ? 1 : 2;
+                }
                 if (GameOver(board) == true)
                 {
                     Console.WriteLine($"Game Over! Player {currentPlayer} wins!");

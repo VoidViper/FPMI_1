@@ -10,9 +10,12 @@ namespace TestCode
     {
         static void Main(string[] args)
         {
-            string a = "asdasd";
-            string b= "asdasd";
-            Console.WriteLine(a[0]==b[0]);
+            //terinary experiments
+            int a, b;
+            a = 0;
+            b = 0;
+            a = (5<2) ? 2 : 1;
+            Console.WriteLine($"a={a}, b={b}");
         }
     }
 
