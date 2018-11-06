@@ -70,7 +70,7 @@ namespace Matrix_Calculator
                 int n = colA;
                 Console.WriteLine("What operation would you like to perform? (+,-,*,t)");
                 operation = Console.ReadLine();
-                if (rowsA != colA && rowsB != colB && colA == rowsB)
+                if ((rowsA != colA && rowsB != colB && colA == rowsB) || (rowsA == colA && rowsB != colB && colA == rowsB) || (rowsA != colA && rowsB == colB && colA == rowsB))
                 {
                     if (operation == "*")
                     {
@@ -94,6 +94,7 @@ namespace Matrix_Calculator
                                 Console.Write($" {Buffer[i, j]} ");
                             Console.WriteLine();
                         }
+
                         
                     }
                     else if (operation == "t") //Transposing and printing both of the matrices i primer
