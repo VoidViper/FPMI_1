@@ -4,11 +4,101 @@ namespace Matrix_Calculator
 {
     class Program
     {
+        static void MatrixReadandPrint(int[,] matrix, int rows, int col)
+        {
+            for (int i = 0; i < rows; i++) //Entering the elements of the matrix 
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    Console.Write($"Enter element ({i + 1},{j + 1}): ");
+                    matrix[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("The matrix is: "); //Printing the matrix
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    Console.Write(" " + matrix[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        static void MatrixAdd(int[,] matrixA, int[,] matrixB, int[,] Buffer)
+        {
+            Console.WriteLine("Addition");
+            for (int i = 0; i < matrixA.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrixA.GetLength(0); j++)
+                {
+                    Buffer[i, j] = matrixA[i, j] + matrixB[i, j];
+                }
+            }
+            for (int i = 0; i < matrixA.GetLength(0); i++)
+            {
+                Console.Write("");
+                for (int j = 0; j < matrixA.GetLength(0); j++)
+                    Console.Write($" {Buffer[i, j]} ");
+                Console.WriteLine();
+            }
+        }
+        static void MatrixSub(int[,] matrixA, int[,] matrixB, int[,] Buffer)
+        {
+            Console.WriteLine("Subtraction");
+            for (int i = 0; i < matrixA.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrixA.GetLength(0); j++)
+                {
+                    Buffer[i, j] = matrixA[i, j] - matrixB[i, j];
+                }
+            }
+            for (int i = 0; i < matrixA.GetLength(0); i++)
+            {
+                Console.Write("");
+                for (int j = 0; j < matrixA.GetLength(0); j++)
+                    Console.Write($" {Buffer[i, j]} ");
+                Console.WriteLine();
+            }
+        }
+        static void MatrixMultiply(int[,] matrixA, int[,] matrixB, int[,] Buffer)
+        {
+            for (int i = 0; i < matrixA.GetLength(0); i++)
+                for (int j = 0; j < matrixB.GetLength(1); j++)
+                    Buffer[i, j] = 0;
+            for (int i = 0; i < matrixA.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrixB.GetLength(1); j++)
+                {
+                    int sum = 0;
+                    for (int k = 0; k < matrixA.GetLength(1); k++)
+                        sum = sum + matrixA[i, k] * matrixB[k, j];
+                    Buffer[i, j] = sum;
+                }
+            }
+            for (int i = 0; i < matrixA.GetLength(0); i++)
+            {
+                Console.Write("");
+                for (int j = 0; j < matrixA.GetLength(0); j++)
+                    Console.Write($" {Buffer[i, j]} ");
+                Console.WriteLine();
+            }
+        }
+        static void MatrixTranspose(int[,] matrix, string name)
+        {
+            Console.WriteLine($"Matrix {name} Transposed is:");
+            for (int i = 0; i < matrix.GetLength(1); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(0); j++)
+                {
+                    Console.Write(" " + matrix[j, i] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
 
         static void Main(string[] args)
         {
             int rowsA, rowsB, colA, colB;
-            int sum = 0;
             string operation;
             bool doContinue = false;
 
@@ -23,53 +113,20 @@ namespace Matrix_Calculator
                 Console.Write("Write the number of cols in Matrix A:");
                 colA = Convert.ToInt32(Console.ReadLine());
                 int[,] matrixA = new int[rowsA, colA];
-
-                for (int i = 0; i < rowsA; i++) //Entering the elements of matrix A
-                {
-                    for (int j = 0; j < colA; j++)
-                    {
-                        Console.Write($"Enter element ({i + 1},{j + 1}): ");
-                        matrixA[i, j] = Convert.ToInt32(Console.ReadLine());
-                    }
-                }
-
-                Console.WriteLine("MatrixA is: "); //Printing matrix A
-                for (int i = 0; i < rowsA; i++)
-                {
-                    for (int j = 0; j < colA; j++)
-                    {
-                        Console.Write(" " + matrixA[i, j] + " ");
-                    }
-                    Console.WriteLine();
-                }
+                MatrixReadandPrint(matrixA, rowsA, colA);
 
                 Console.Write("Write the number of rows in Matrix B:");
                 rowsB = Convert.ToInt32(Console.ReadLine());
                 Console.Write("Write the number of cols in Matrix B:");
                 colB = Convert.ToInt32(Console.ReadLine());
                 int[,] matrixB = new int[rowsB, colB];
-                for (int i = 0; i < rowsB; i++) //Entering the elements of matrix B
-                {
-                    for (int j = 0; j < colB; j++)
-                    {
-                        Console.Write($"Enter element ({i + 1},{j + 1}): ");
-                        matrixB[i, j] = Convert.ToInt32(Console.ReadLine());
-                    }
-                }
+                MatrixReadandPrint(matrixB, rowsB, colB);
 
-                Console.WriteLine("MatrixB is: "); //Printing matrix A
-                for (int i = 0; i < rowsB; i++)
-                {
-                    for (int j = 0; j < colB; j++)
-                    {
-                        Console.Write(" " + matrixB[i, j] + " ");
-                    }
-                    Console.WriteLine();
-                }
                 int[,] Buffer = new int[Math.Max(rowsA, rowsB), Math.Max(colA, colB)];
-                int n = colA;
+
                 Console.WriteLine("What operation would you like to perform? (+,-,*,t)");
                 operation = Console.ReadLine();
+
                 if ((rowsA != colA && rowsB != colB && colA == rowsB) || (rowsA == colA && rowsB != colB && colA == rowsB) || (rowsA != colA && rowsB == colB && colA == rowsB))
                 {
                     if (operation == "*")
@@ -77,162 +134,69 @@ namespace Matrix_Calculator
                         for (int i = 0; i < rowsA; i++)
                             for (int j = 0; j < colB; j++)
                                 Buffer[i, j] = 0;
-                        for (int i = 0; i < rowsA; i++)    
+                        for (int i = 0; i < rowsA; i++)
                         {
-                            for (int j = 0; j < colB; j++)    
+                            for (int j = 0; j < colB; j++)
                             {
-                                sum = 0;
+                                int sum = 0;
                                 for (int k = 0; k < colA; k++)
                                     sum = sum + matrixA[i, k] * matrixB[k, j];
                                 Buffer[i, j] = sum;
                             }
                         }
-                        for (int i = 0; i < n; i++)
+                        for (int i = 0; i < colA; i++)
                         {
                             Console.Write("");
-                            for (int j = 0; j < n; j++)
+                            for (int j = 0; j < colA; j++)
                                 Console.Write($" {Buffer[i, j]} ");
                             Console.WriteLine();
                         }
-
-                        
                     }
                     else if (operation == "t") //Transposing and printing both of the matrices i primer
                     {
-                        Console.WriteLine("Matrix A Transposed is:");
-                        for (int i = 0; i < colA; i++)
-                        {
-                            for (int j = 0; j < rowsA; j++)
-                            {
-                                Console.Write(" " + matrixA[j, i] + " ");
-                            }
-                            Console.WriteLine();
-                        }
-
-                        Console.WriteLine("Matrix B Transposed is:");
-                        for (int i = 0; i < colB; i++)
-                        {
-                            for (int j = 0; j < rowsB; j++)
-                            {
-                                Console.Write(" " + matrixB[j, i] + " ");
-                            }
-                            Console.WriteLine();
-                        }
+                        MatrixTranspose(matrixA, "A");
+                        MatrixTranspose(matrixB, "B");
                     }
-                    
                     else
                     {
                         Console.WriteLine("Error! Invalid operation. Exiting.");
                     }
                 }
+                else if (rowsA == colA && rowsB == colB && rowsA != colB)
+                {
+                    if (operation == "t")
+                    {
+                        MatrixTranspose(matrixA, "A");
+                        MatrixTranspose(matrixB, "B");
+                    }
+                    else Console.WriteLine("Error! Invalid operation. Exiting.");
+                }
                 else if (rowsA == colA && rowsB == colB)
                 {
-                    //Thanks to Mincho da brain
                     if (operation == "+") //Adding the two matrices
                     {
-                        Console.WriteLine("Addition");
-                        for (int i = 0; i < n; i++)
-                        {
-                            for (int j = 0; j < n; j++)
-                            {
-                                Buffer[i, j] = matrixA[i, j] + matrixB[i, j];
-                            }
-                        }
-                        for (int i = 0; i < n; i++)
-                        {
-                            Console.Write("");
-                            for (int j = 0; j < n; j++)
-                                Console.Write($" {Buffer[i, j]} ");
-                            Console.WriteLine();
-                        }
+                        MatrixAdd(matrixA, matrixB, Buffer);
                     }
-                    if (operation == "-") //Subtracting the two matrices
+                    else if (operation == "-") //Subtracting the two matrices
                     {
-                        Console.WriteLine("Subtraction");
-                        for (int i = 0; i < n; i++)
-                        {
-                            for (int j = 0; j < n; j++)
-                            {
-                                Buffer[i, j] = matrixA[i, j] - matrixB[i, j];
-                            }
-                        }
-                        for (int i = 0; i < n; i++)
-                        {
-                            Console.Write("");
-                            for (int j = 0; j < n; j++)
-                                Console.Write($" {Buffer[i, j]} ");
-                            Console.WriteLine();
-                        }
+                        MatrixSub(matrixA, matrixB, Buffer);
                     }
-                    if (operation == "*") //Multiplying the two SQUARE matrices
+                    else if (operation == "*") //Multiplying the two SQUARE matrices
                     {
-                        for (int i = 0; i < rowsA; i++)
-                            for (int j = 0; j < colB; j++)
-                                Buffer[i, j] = 0;
-                        for (int i = 0; i < rowsA; i++)
-                        {
-                            for (int j = 0; j < colB; j++)
-                            {
-                                sum = 0;
-                                for (int k = 0; k < colA; k++)
-                                    sum = sum + matrixA[i, k] * matrixB[k, j];
-                                Buffer[i, j] = sum;
-                            }
-                        }
-                        for (int i = 0; i < n; i++)
-                        {
-                            Console.Write("");
-                            for (int j = 0; j < n; j++)
-                                Console.Write($" {Buffer[i, j]} ");
-                            Console.WriteLine();
-                        }
+                        MatrixMultiply(matrixA, matrixB, Buffer);
                     }
-                    if (operation == "t") //Transposing the two matrices
+                    else if (operation == "t") //Transposing the two matrices
                     {
-                        Console.WriteLine("Matrix A Transposed is:");
-                        for (int i = 0; i < colA; i++)
-                        {
-                            for (int j = 0; j < rowsA; j++)
-                            {
-                                Console.Write(" " + matrixA[j, i] + " ");
-                            }
-                            Console.WriteLine();
-                        }
-
-                        Console.WriteLine("Matrix B Transposed is:");
-                        for (int i = 0; i < colB; i++)
-                        {
-                            for (int j = 0; j < rowsB; j++)
-                            {
-                                Console.Write(" " + matrixB[j, i] + " ");
-                            }
-                            Console.WriteLine();
-                        }
+                        MatrixTranspose(matrixA, "A");
+                        MatrixTranspose(matrixB, "B");
                     }
                 }
-                else if (rowsA != colA && rowsB != colB) //edge case for 2 completely different matrices which can be transposed
+                else if ((rowsA != colA && rowsB != colB)|| (rowsA == colA && rowsB != colB) || (rowsA != colA && rowsB == colB)) //edge case for 2 completely different matrices which can be transposed
                 {
                     if (operation == "t") //Transposing and printing both of the matrices
                     {
-                        Console.WriteLine("Matrix A Transposed is:");
-                        for (int i = 0; i < colA; i++)
-                        {
-                            for (int j = 0; j < rowsA; j++)
-                            {
-                                Console.Write(" " + matrixA[j, i] + " ");
-                            }
-                            Console.WriteLine();
-                        }
-
-                        Console.WriteLine("Matrix B Transposed is:");
-                        for (int i = 0; i < colB; i++)
-                        {
-                            for (int j = 0; j < rowsB; j++)
-                            {
-                                Console.Write(" " + matrixB[j, i] + " ");
-                            }
-                            Console.WriteLine();
-                        }
+                        MatrixTranspose(matrixA, "A");
+                        MatrixTranspose(matrixB, "B");
                     }
                     else
                     {
@@ -252,9 +216,9 @@ namespace Matrix_Calculator
                 else doContinue = false;
             }
             while (doContinue == true);
-            
-           
-            
+
+
+
         }
     }
 }
