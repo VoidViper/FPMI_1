@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cows_and_Bulls", "Cows_and_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morski_Chess", "Morski_Chess\Morski_Chess.csproj", "{641D4166-D2F6-47E6-87CE-75356967EED5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBar", "FooBar\FooBar.csproj", "{2676D466-E95E-4DE7-9210-31E74FA125F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine_Resto", "VendingMachine_Resto\VendingMachine_Resto.csproj", "{82819D32-36E4-481F-BE06-6D0E52BB182D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +139,14 @@ Global
 		{641D4166-D2F6-47E6-87CE-75356967EED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{641D4166-D2F6-47E6-87CE-75356967EED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{641D4166-D2F6-47E6-87CE-75356967EED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2676D466-E95E-4DE7-9210-31E74FA125F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2676D466-E95E-4DE7-9210-31E74FA125F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2676D466-E95E-4DE7-9210-31E74FA125F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2676D466-E95E-4DE7-9210-31E74FA125F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82819D32-36E4-481F-BE06-6D0E52BB182D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82819D32-36E4-481F-BE06-6D0E52BB182D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82819D32-36E4-481F-BE06-6D0E52BB182D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82819D32-36E4-481F-BE06-6D0E52BB182D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
