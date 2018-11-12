@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBar", "FooBar\FooBar.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendingMachine_Resto", "VendingMachine_Resto\VendingMachine_Resto.csproj", "{82819D32-36E4-481F-BE06-6D0E52BB182D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Struct_Example", "Struct_Example\Struct_Example.csproj", "{4E945E3B-237A-490A-BD37-38A575E38C09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{82819D32-36E4-481F-BE06-6D0E52BB182D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82819D32-36E4-481F-BE06-6D0E52BB182D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82819D32-36E4-481F-BE06-6D0E52BB182D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E945E3B-237A-490A-BD37-38A575E38C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E945E3B-237A-490A-BD37-38A575E38C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E945E3B-237A-490A-BD37-38A575E38C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E945E3B-237A-490A-BD37-38A575E38C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
