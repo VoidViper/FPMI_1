@@ -144,10 +144,17 @@ namespace Matrix_Calculator
                                 Buffer[i, j] = sum;
                             }
                         }
-                        for (int i = 0; i < colA; i++)
+                        /*for (int i = 0; i < colA; i++)
                         {
                             Console.Write("");
                             for (int j = 0; j < colA; j++)
+                                Console.Write($" {Buffer[i, j]} ");
+                            Console.WriteLine();
+                        }*/
+                        for (int i = 0; i < rowsA; i++)
+                        {
+                            Console.Write("");
+                            for (int j = 0; j < colB; j++)
                                 Console.Write($" {Buffer[i, j]} ");
                             Console.WriteLine();
                         }
