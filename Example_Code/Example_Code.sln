@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Struct_Example", "Struct_Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Struct_Vector_Add", "Struct_Vector_Add\Struct_Vector_Add.csproj", "{91EC8E43-E1D8-4B86-B78B-7D1239C417B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aylinka123", "Aylinka123\Aylinka123.csproj", "{79C223D1-BEA7-4164-9340-9774B608B104}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{91EC8E43-E1D8-4B86-B78B-7D1239C417B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91EC8E43-E1D8-4B86-B78B-7D1239C417B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91EC8E43-E1D8-4B86-B78B-7D1239C417B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79C223D1-BEA7-4164-9340-9774B608B104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C223D1-BEA7-4164-9340-9774B608B104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C223D1-BEA7-4164-9340-9774B608B104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C223D1-BEA7-4164-9340-9774B608B104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
