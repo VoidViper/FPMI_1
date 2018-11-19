@@ -10,31 +10,42 @@ namespace Struct_Vector_Add
     {
         struct Point
         {
-            public double x, y;
+            public double x;
+            public double y;
+
+            public Point(double x, double y)
+            {
+                Console.WriteLine("Yeeeeey!");
+                this.x = x;
+                this.y = y;
+            }
+
             public void add(Point other)
             {
                 x += other.x;
                 y += other.y;
             }
         }
-        static void PointInspector (Point point)
+
+        static void PointInspector(Point point)
         {
+
             Console.WriteLine($"X: {point.x}\nY: {point.y}");
+
         }
+
         static void Main(string[] args)
         {
-            Point p1 = new Point();
-            Point p2 = new Point();
-
-            p1.x = 2.3;
-            p1.y = 5.3;
-
-            p2.x = 1.2;
-            p2.y = 4.5;
+            Point p1 = new Point(1.2, 4.3);
+            Point p2 = new Point(4.5, 6.4);
 
             PointInspector(p1);
+
             p1.add(p2);
+
             PointInspector(p1);
+
+            Console.ReadLine();
         }
     }
 }
