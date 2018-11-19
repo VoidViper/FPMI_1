@@ -27,12 +27,10 @@ namespace Classes
             PrivateInspector();
             return $"Author: {this.Author} \nTitle: {this.Title} \nRelease Date: {this.ReleaseDate} \nPages: {this.Pages} \nRead: {this.Read}";
         }
-        public void InsertBook()
+        public virtual void InsertBook()
         {
             Console.Write($"Insert the name of the book: ");
             this.Title = Console.ReadLine();
-            Console.Write($"Insert the name of the author: ");
-            this.Author = Console.ReadLine();
             Console.Write($"Insert the release date of the book: ");
             this.ReleaseDate = int.Parse(Console.ReadLine());
             Console.Write($"Insert the number of pages in the book: ");
@@ -50,16 +48,53 @@ namespace Classes
         }
     }
 
+    class HarryPotterBook : Book
+    {
+        public HarryPotterBook()
+        {
+            this.Author = "J. K. Rowling";
+        }
+        override public void InsertBook()
+        {
+            base.InsertBook();
+            this.Author = "JK Rowling";
+        }
+    }
+
+    class ClassWithNumber
+    {
+        public int number;
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Book book1 = new Book();
+            /* int a = 4;
+             int b = a;
+
+             Console.WriteLine(a);
+             Console.WriteLine(b);
+
+             a = 5;
+             Console.WriteLine(a);
+             Console.WriteLine(b);
+             */
+            //Book book1 = new HarryPotterBook();
             //book1.InsertBook();
             //Console.WriteLine(book1.Inspect());
-            book1.HelloFromNonStatic();
-            Book.HelloFromStatic();
-            
+
+            ClassWithNumber cw1 = new ClassWithNumber();
+            cw1.number = 5;
+            ClassWithNumber cw2 = cw1;
+
+            Console.WriteLine(cw1.number);
+            Console.WriteLine(cw2.number);
+
+            cw2.number = 120;
+
+            Console.WriteLine(cw1.number);
+            Console.WriteLine(cw2.number);
         }
     }
 }
