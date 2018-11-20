@@ -9,34 +9,39 @@ namespace CourseWork
 {
     class Student
     {
-        string Name;
-        int fNum;
-        double[] grades;
-        string gradesBufferSource = "";
-        string[] gradesBufferResult;
-        bool correctGrade = false;
+        
 
         public void AddStudent()
         {
+            string Name;
+            int fNum;
+            double[] grades = new double[40];
+            string gradesBufferSource = "";
+            string[] gradesBufferResult;
+            bool correctGrade = false;
             Console.Write("How many students would you like to add? : ");
             var n = int.Parse(Console.ReadLine());
             for (int i = 0; i < n; i++)
             {
                 Console.Write("Enter a faculty number: ");
-                this.fNum = int.Parse(Console.ReadLine());
+                fNum = int.Parse(Console.ReadLine());
 
                 Console.Write("Enter a name: ");
-                this.Name = Console.ReadLine();
+                Name = Console.ReadLine();
                 Console.Write("Enter the student's grades with spaces in between them. [From 2 to 6 / max 40 grades]: ");
                 gradesBufferSource = Console.ReadLine();
                 gradesBufferResult = gradesBufferSource.Split(' ');
 
-                for (int z = 0; z < gradesBufferResult.Length; z++) //converting the string[] gradesBufferResult to int[] grades
+                for (int z = 0; z < gradesBufferResult.Length; z++) //converting the string[] gradesBufferResult to double[] grades
                 {
                     grades[z] = double.Parse(gradesBufferResult[z]);
                 }
 
-                if (grades.Length <= 40)
+                for (int k = 0; k < grades.Length; k++)
+                {
+                    if (grades[k]!=0) Console.WriteLine(grades[k]);
+                }
+                /*if (grades.Length <= 40)
                 {
                     for (int j = 0; j < grades.Length; j++)
                     {
@@ -52,7 +57,7 @@ namespace CourseWork
                 {
                     Console.WriteLine("You have entered an invalid grade. Try again in the next itteration.");
                     n--;
-                }
+                }*/
             }
             
         }
@@ -64,7 +69,7 @@ namespace CourseWork
         {
             Console.WriteLine("W.I.P");
         }
-        public void MakeFile()
+        public void MakeFile() //Da se zapisva informaciqta ot drugite funkcii pod nqkuv format e.g Name: {name}, FakNum: {fakNum}, ..
         {
             string path, ToWrite;
             Console.WriteLine("Enter a directory where you would like to have the list of students stored.");
@@ -75,7 +80,7 @@ namespace CourseWork
             ToWrite = Console.ReadLine();
             File.WriteAllText(path, ToWrite);
         }
-        public void ReadFile()
+        public void ReadFile() //Da se chete file-a ot formata i da se vkarva informaciqta v masivite za da se raboti s neq
         {
             Console.WriteLine("This program checks if a file exists and if it does, it opens it.");
             Console.WriteLine("Enter the path of the file [e.g.C:\\Users\\Admin\\Desktop\\storage.txt]");
@@ -88,11 +93,11 @@ namespace CourseWork
             }
             else Console.WriteLine("The file does not exist.");
         }
-        public void SortByID()
+        public void SortByID() //Implement Selection Sort Algorithm
         {
             Console.WriteLine("W.I.P");
         }
-        public void AvgGradeSort()
+        public void AvgGradeSort() //Implement Insertion Sort Algorithm by average grade
         {
             Console.WriteLine("W.I.P");
         }
