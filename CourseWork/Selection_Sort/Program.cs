@@ -36,8 +36,8 @@ namespace Selection_Sort
                     {
                         smallestElement = index;
                     }
-                    SwapElements(i, smallestElement, arr);
                 }
+                SwapElements(i, smallestElement, arr);
             }
             for (int i = 0; i < arr.Length; i++)
             {

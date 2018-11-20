@@ -66,11 +66,27 @@ namespace CourseWork
         }
         public void MakeFile()
         {
-            Console.WriteLine("W.I.P");
+            string path, ToWrite;
+            Console.WriteLine("Enter a directory where you would like to have the list of students stored.");
+            Console.WriteLine("[e.g. C:\\Users\\Admin\\Desktop\\storage.txt]");
+            Console.Write("Path: ");
+            path = Console.ReadLine();
+            Console.Write("What would you like it to say : ");
+            ToWrite = Console.ReadLine();
+            File.WriteAllText(path, ToWrite);
         }
         public void ReadFile()
         {
-            Console.WriteLine("W.I.P");
+            Console.WriteLine("This program checks if a file exists and if it does, it opens it.");
+            Console.WriteLine("Enter the path of the file [e.g.C:\\Users\\Admin\\Desktop\\storage.txt]");
+            Console.Write("Path: ");
+            string path = Console.ReadLine();
+            if (File.Exists(path))
+            {
+                string ToRead = File.ReadAllText(path);
+                Console.WriteLine(ToRead);
+            }
+            else Console.WriteLine("The file does not exist.");
         }
         public void SortByID()
         {

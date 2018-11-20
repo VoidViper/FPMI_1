@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Print_Student_Info", "Print
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selection_Sort", "Selection_Sort\Selection_Sort.csproj", "{8CD5976D-7B2F-4440-8A76-D9D02B7192A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Make_File", "Make_File\Make_File.csproj", "{461562BD-7265-499C-9D5C-3384BDD2EBB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read_File", "Read_File\Read_File.csproj", "{0EF79815-DD2C-4221-A372-ACB5AB59208B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{8CD5976D-7B2F-4440-8A76-D9D02B7192A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CD5976D-7B2F-4440-8A76-D9D02B7192A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CD5976D-7B2F-4440-8A76-D9D02B7192A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461562BD-7265-499C-9D5C-3384BDD2EBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461562BD-7265-499C-9D5C-3384BDD2EBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461562BD-7265-499C-9D5C-3384BDD2EBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461562BD-7265-499C-9D5C-3384BDD2EBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF79815-DD2C-4221-A372-ACB5AB59208B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF79815-DD2C-4221-A372-ACB5AB59208B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF79815-DD2C-4221-A372-ACB5AB59208B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF79815-DD2C-4221-A372-ACB5AB59208B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
