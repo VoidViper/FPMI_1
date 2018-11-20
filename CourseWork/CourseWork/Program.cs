@@ -11,7 +11,7 @@ namespace CourseWork
     {
         public string Name;
         public int fNum;
-        public int[] grades;
+        public double[] grades;
         public string gradesBufferSource = "";
         public string[] gradesBufferResult;
         bool correctGrade = false;
@@ -31,16 +31,16 @@ namespace CourseWork
                 gradesBufferSource = Console.ReadLine();
                 gradesBufferResult = gradesBufferSource.Split(' ');
 
-                for (int z = 0; z < gradesBufferResult.Length; z++) //converting the char[] gradesBufferResult to int[] grades
+                for (int z = 0; z < gradesBufferResult.Length; z++) //converting the string[] gradesBufferResult to int[] grades
                 {
-                    grades[z] = int.Parse(gradesBufferResult[z]);
+                    grades[z] = double.Parse(gradesBufferResult[z]);
                 }
 
                 if (grades.Length <= 40)
                 {
                     for (int j = 0; j < grades.Length; j++)
                     {
-                        if (grades[j] >= 2 && grades[j] <= 6)
+                        if (grades[j] >= 2 && grades[j] <= 6) //possible problem if last grade is valid but there are invalid grades 
                         {
                             correctGrade = true;
                         }
