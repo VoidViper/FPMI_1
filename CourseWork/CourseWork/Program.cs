@@ -9,11 +9,11 @@ namespace CourseWork
 {
     class Student
     {
-        public string Name;
-        public int fNum;
-        public double[] grades;
-        public string gradesBufferSource = "";
-        public string[] gradesBufferResult;
+        string Name;
+        int fNum;
+        double[] grades;
+        string gradesBufferSource = "";
+        string[] gradesBufferResult;
         bool correctGrade = false;
 
         public void AddStudent()
@@ -58,7 +58,31 @@ namespace CourseWork
         }
         public void AddGrades()
         {
-
+            Console.WriteLine("W.I.P");
+        }
+        public void PrintAllStudentInfo()
+        {
+            Console.WriteLine("W.I.P");
+        }
+        public void MakeFile()
+        {
+            Console.WriteLine("W.I.P");
+        }
+        public void ReadFile()
+        {
+            Console.WriteLine("W.I.P");
+        }
+        public void SortByID()
+        {
+            Console.WriteLine("W.I.P");
+        }
+        public void AvgGradeSort()
+        {
+            Console.WriteLine("W.I.P");
+        }
+        public void PrintByID()
+        {
+            Console.WriteLine("W.I.P");
         }
     }
 
@@ -78,7 +102,8 @@ namespace CourseWork
             Console.WriteLine("8.List the information of a specific student by their faculty number\n");
             
             bool doContinue = false;
-
+            Student asd = new Student();
+            
 
             do
             {
@@ -87,28 +112,28 @@ namespace CourseWork
                 switch (operation)
                 {
                     case 1:
-                        AddStudent();
+                        asd.AddStudent();
                         break;
                     case 2:
-                        AddGrades();
+                        asd.AddGrades();
                         break;
                     case 3:
-                        PrintAllStudentInfo();
+                        asd.PrintAllStudentInfo();
                         break;
                     case 4:
-                        MakeFile();
+                        asd.MakeFile();
                         break;
                     case 5:
-                        ReadFile();
+                        asd.ReadFile();
                         break;
                     case 6:
-                        SortByID();
+                        asd.SortByID();
                         break;
                     case 7:
-                        AvgGradeSort();
+                        asd.AvgGradeSort();
                         break;
                     case 8:
-                        PrintByID();
+                        asd.PrintByID();
                         break;
                 }
 
