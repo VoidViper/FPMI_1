@@ -23,9 +23,9 @@ namespace CourseWork
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write($"Enter a name for student {i+1}: ");
+                Console.Write($"Enter a name for student {i + 1}: ");
                 Name[i] = Console.ReadLine();
-                Console.Write($"Enter a faculty number for student {i+1}: ");
+                Console.Write($"Enter a faculty number for student {i + 1}: ");
                 fNum[i] = Console.ReadLine();
                 Console.Write($"Enter the student's grades with spaces in between them. [From 2 to 6 / max 40 grades]: ");
                 gradesBufferSource = Console.ReadLine();
@@ -37,16 +37,12 @@ namespace CourseWork
                 }
                 for (int k = 0; k < gradesBufferResult.Length; k++) //converting the array of grades to a single string without spaces for storage in a file
                 {
-                    gradesString = gradesString + gradesBufferResult[k]; 
+                    gradesString = gradesString + gradesBufferResult[k];
                 }
-                
-                contents[i] = (Name[i] +"_" + fNum[i] +"_" + gradesString);
 
-            }
-            for (int j = 0; j < contents.Length; j++) //Dumping the information in contents to file
-            {
+                contents[i] = (Name[i] + "_" + fNum[i] + "_" + gradesString);
                 File.AppendAllLines("buffer.txt", contents);
-            }
+            }           
 
 
         }
