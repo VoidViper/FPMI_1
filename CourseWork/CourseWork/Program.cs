@@ -11,21 +11,22 @@ namespace CourseWork
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This program will let you do the following things:\n");
-            Console.WriteLine("1.Add a new student");
-            Console.WriteLine("2.Modify/Add grades to an existing student");
-            Console.WriteLine("3.Print all the students, their faculty number and their average grade");
-            Console.WriteLine("4.Make a file with all of the students' information");
-            Console.WriteLine("5.Read a file with student information");
-            Console.WriteLine("6.Sort the students by their faculty number");
-            Console.WriteLine("7.Sort the students by their average grade in descending order");
-            Console.WriteLine("8.List the information of a specific student by their faculty number\n");
+            
             
             bool doContinue = false;
-            Student asd = new Student();
 
             do
             {
+                Console.Clear();
+                Console.WriteLine("This program will let you do the following things:\n");
+                Console.WriteLine("1.Add a new student");
+                Console.WriteLine("2.Modify/Add grades to an existing student");
+                Console.WriteLine("3.Print all the students, their faculty number and their average grade");
+                Console.WriteLine("4.Make a file with all of the students' information");
+                Console.WriteLine("5.Read a file with student information");
+                Console.WriteLine("6.Sort the students by their faculty number");
+                Console.WriteLine("7.Sort the students by their average grade in descending order");
+                Console.WriteLine("8.List the information of a specific student by their faculty number\n");
                 Console.Write("What operation would you like to perform? [Choose from 1 to 8]: ");
                 var operation = int.Parse(Console.ReadLine());
                 switch (operation)

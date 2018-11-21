@@ -11,52 +11,44 @@ namespace CourseWork
     {
         public static void AddStudent()
         {
-            string Name;
-            int fNum;
-            double[] grades = new double[40];
-            string gradesBufferSource = "";
-            string[] gradesBufferResult;
-            bool correctGrade = false;
             Console.Write("How many students would you like to add? : ");
             var n = int.Parse(Console.ReadLine());
+            string[] Name = new string[n];
+            string[] fNum = new string[n];
+            string[] gradesBufferResult;
+            double[] grades = new double[40];
+            string gradesBufferSource = "", gradesString = "";
+            string[] contents = new string[n];
+
+            bool correctGrade = false;
+
             for (int i = 0; i < n; i++)
             {
-                Console.Write("Enter a faculty number: ");
-                fNum = int.Parse(Console.ReadLine());
-
-                Console.Write("Enter a name: ");
-                Name = Console.ReadLine();
-                Console.Write("Enter the student's grades with spaces in between them. [From 2 to 6 / max 40 grades]: ");
+                Console.Write($"Enter a name for student {i+1}: ");
+                Name[i] = Console.ReadLine();
+                Console.Write($"Enter a faculty number for student {i+1}: ");
+                fNum[i] = Console.ReadLine();
+                Console.Write($"Enter the student's grades with spaces in between them. [From 2 to 6 / max 40 grades]: ");
                 gradesBufferSource = Console.ReadLine();
                 gradesBufferResult = gradesBufferSource.Split(' ');
 
-                for (int z = 0; z < gradesBufferResult.Length; z++) //converting the string[] gradesBufferResult to double[] grades
+                for (int z = 0; z < gradesBufferResult.Length; z++) //converting the string[] gradesBufferResult to double[] grades to make checks
                 {
                     grades[z] = double.Parse(gradesBufferResult[z]);
                 }
+                for (int k = 0; k < gradesBufferResult.Length; k++) //converting the array of grades to a single string without spaces for storage in a file
+                {
+                    gradesString = gradesString + gradesBufferResult[k]; 
+                }
+                
+                contents[i] = (Name[i] +"_" + fNum[i] +"_" + gradesString[i]);
 
-                for (int k = 0; k < grades.Length; k++)
-                {
-                    if (grades[k] != 0) Console.WriteLine(grades[k]);
-                }
-                /*if (grades.Length <= 40)
-                {
-                    for (int j = 0; j < grades.Length; j++)
-                    {
-                        if (grades[j] >= 2 && grades[j] <= 6) //possible problem if last grade is valid but there are invalid grades 
-                        {
-                            correctGrade = true;
-                        }
-                        else correctGrade = false;
-                    }
-                }
-                else Console.WriteLine("The number of grades you have entered exceeds 40");
-                if (correctGrade == false)
-                {
-                    Console.WriteLine("You have entered an invalid grade. Try again in the next itteration.");
-                    n--;
-                }*/
             }
+            for (int random = 0; random < contents.Length; random++)
+            {
+                Console.WriteLine(contents[random]);
+            }
+
 
         }
         public static void AddGrades()
@@ -69,14 +61,13 @@ namespace CourseWork
         }
         public static void MakeFile() //Da se zapisva informaciqta ot drugite funkcii pod nqkuv format e.g Name: {name}, FakNum: {fakNum}, ..
         {
-            string path, ToWrite;
+            string path;
             Console.WriteLine("Enter a directory where you would like to have the list of students stored.");
             Console.WriteLine("[e.g. C:\\Users\\Admin\\Desktop\\storage.txt]");
             Console.Write("Path: ");
             path = Console.ReadLine();
             Console.Write("What would you like it to say : ");
-            ToWrite = Console.ReadLine();
-            File.WriteAllText(path, ToWrite);
+            //File.WriteAllLines(path, contents);
         }
         public static void ReadFile() //Da se chete file-a ot formata i da se vkarva informaciqta v masivite za da se raboti s neq
         {

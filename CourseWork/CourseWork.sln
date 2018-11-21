@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Make_File", "Make_File\Make
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read_File", "Read_File\Read_File.csproj", "{0EF79815-DD2C-4221-A372-ACB5AB59208B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "checks", "checks\checks.csproj", "{B8C42D46-7FAD-4F77-8720-9F4FC28CBEE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{0EF79815-DD2C-4221-A372-ACB5AB59208B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EF79815-DD2C-4221-A372-ACB5AB59208B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EF79815-DD2C-4221-A372-ACB5AB59208B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C42D46-7FAD-4F77-8720-9F4FC28CBEE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C42D46-7FAD-4F77-8720-9F4FC28CBEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C42D46-7FAD-4F77-8720-9F4FC28CBEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C42D46-7FAD-4F77-8720-9F4FC28CBEE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
