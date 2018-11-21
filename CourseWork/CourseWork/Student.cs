@@ -15,11 +15,10 @@ namespace CourseWork
             var n = int.Parse(Console.ReadLine());
             string[] Name = new string[n];
             string[] fNum = new string[n];
-            string[] gradesBufferResult;
-            double[] grades = new double[40];
             string gradesBufferSource = "", gradesString = "";
+            string[] gradesBufferResult;
+            double[] grades = new double[40];            
             string[] contents = new string[n];
-
             bool correctGrade = false;
 
             for (int i = 0; i < n; i++)
@@ -41,12 +40,12 @@ namespace CourseWork
                     gradesString = gradesString + gradesBufferResult[k]; 
                 }
                 
-                contents[i] = (Name[i] +"_" + fNum[i] +"_" + gradesString[i]);
+                contents[i] = (Name[i] +"_" + fNum[i] +"_" + gradesString);
 
             }
-            for (int random = 0; random < contents.Length; random++)
+            for (int j = 0; j < contents.Length; j++) //Dumping the information in contents to file
             {
-                Console.WriteLine(contents[random]);
+                File.AppendAllLines("buffer.txt", contents);
             }
 
 
