@@ -17,9 +17,10 @@ namespace CourseWork
             string[] fNum = new string[n];
             string gradesBufferSource = "", gradesString = "";
             string[] gradesBufferResult;
-            double[] grades = new double[40];            
+            double[] grades = new double[40];
             string[] contents = new string[n];
             bool correctGrade = false;
+            StreamWriter myWriter = new StreamWriter("buffer.txt", true);
 
             for (int i = 0; i < n; i++)
             {
@@ -39,10 +40,14 @@ namespace CourseWork
                 {
                     gradesString = gradesString + gradesBufferResult[k];
                 }
-
                 contents[i] = (Name[i] + "_" + fNum[i] + "_" + gradesString);
-                File.AppendAllLines("buffer.txt", contents);
-            }           
+                gradesString = "";
+                //File.AppendAllLines("buffer.txt", contents);
+                //File.AppendAllText("buffer.txt", contents[i]);
+                myWriter.WriteLine(contents[i]);
+
+            }
+            myWriter.Close();
 
 
         }
