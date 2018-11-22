@@ -9,12 +9,12 @@ namespace CourseWork
 {
     class Student
     {
-        public static void AddStudent()
+        public void AddStudent()
         {
             Console.Write("How many students would you like to add? : ");
             var n = int.Parse(Console.ReadLine());
             string[] Name = new string[n];
-            string[] fNum = new string[n];
+            int[] fNum = new int[n];
             string gradesBufferSource = "", gradesString = "";
             string[] gradesBufferResult;
             double[] grades = new double[40];
@@ -27,7 +27,7 @@ namespace CourseWork
                 Console.Write($"Enter a name for student {i + 1}: ");
                 Name[i] = Console.ReadLine();
                 Console.Write($"Enter a faculty number for student {i + 1}: ");
-                fNum[i] = Console.ReadLine();
+                fNum[i] = int.Parse(Console.ReadLine());
                 Console.Write($"Enter the student's grades with spaces in between them. [From 2 to 6 / max 40 grades]: ");
                 gradesBufferSource = Console.ReadLine();
                 gradesBufferResult = gradesBufferSource.Split(' ');
@@ -48,18 +48,16 @@ namespace CourseWork
 
             }
             myWriter.Close();
-
-
         }
-        public static void AddGrades()
+        public void AddGrades()
         {
             Console.WriteLine("W.I.P");
         }
-        public static void PrintAllStudentInfo()
+        public void PrintAllStudentInfo()
         {
             Console.WriteLine("W.I.P");
         }
-        public static void MakeFile() //Da se zapisva informaciqta ot drugite funkcii pod nqkuv format e.g Name: {name}, FakNum: {fakNum}, ..
+        public void MakeFile() //Da se zapisva informaciqta ot drugite funkcii pod nqkuv format e.g Name: {name}, FakNum: {fakNum}, ..
         {
             string path;
             Console.WriteLine("Enter a directory where you would like to have the list of students stored.");
@@ -69,7 +67,7 @@ namespace CourseWork
             Console.Write("What would you like it to say : ");
             //File.WriteAllLines(path, contents);
         }
-        public static void ReadFile() //Da se chete file-a ot formata i da se vkarva informaciqta v masivite za da se raboti s neq
+        public void ReadFile() //Da se chete file-a ot formata i da se vkarva informaciqta v masivite za da se raboti s neq
         {
             Console.WriteLine("This program checks if a file exists and if it does, it opens it.");
             Console.WriteLine("Enter the path of the file [e.g.C:\\Users\\Admin\\Desktop\\storage.txt]");
@@ -82,15 +80,35 @@ namespace CourseWork
             }
             else Console.WriteLine("The file does not exist.");
         }
-        public static void SortByID() //Implement Selection Sort Algorithm
+        public void SortByID() //Implement Selection Sort Algorithm
+        {
+            int smallestElement;
+            
+            for (int i = 0; i < fNum.Length; i++)
+            {
+                smallestElement = i;
+                for (int index = i + 1; index < fNum.Length; index++)
+                {
+                    if (fNum[index] < fNum[smallestElement])
+                    {
+                        smallestElement = index;
+                    }
+                }
+                int temp = fNum[i];
+                fNum[i] = fNum[smallestElement];
+                fNum[smallestElement] = temp;
+            }
+            Console.WriteLine("Sorted");
+            for (int i = 0; i < fNum.Length; i++)
+            {
+                Console.WriteLine(fNum[i]);
+            }
+        }
+        public void AvgGradeSort() //Implement Insertion Sort Algorithm by average grade
         {
             Console.WriteLine("W.I.P");
         }
-        public static void AvgGradeSort() //Implement Insertion Sort Algorithm by average grade
-        {
-            Console.WriteLine("W.I.P");
-        }
-        public static void PrintByID()
+        public void PrintByID()
         {
             Console.WriteLine("W.I.P");
         }

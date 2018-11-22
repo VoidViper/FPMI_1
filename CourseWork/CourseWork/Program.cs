@@ -29,31 +29,32 @@ namespace CourseWork
                 Console.WriteLine("8.List the information of a specific student by their faculty number\n");
                 Console.Write("What operation would you like to perform? [Choose from 1 to 8]: ");
                 var operation = int.Parse(Console.ReadLine());
+                Student asd = new Student();
                 switch (operation)
                 {
                     case 1:
-                        Student.AddStudent();
+                        asd.AddStudent();
                         break;
                     case 2:
-                        Student.AddGrades();
+                        asd.AddGrades();
                         break;
                     case 3:
-                        Student.PrintAllStudentInfo();
+                        asd.PrintAllStudentInfo();
                         break;
                     case 4:
-                        Student.MakeFile();
+                        asd.MakeFile();
                         break;
                     case 5:
-                        Student.ReadFile();
+                        asd.ReadFile();
                         break;
                     case 6:
-                        Student.SortByID();
+                        asd.SortByID();
                         break;
                     case 7:
-                        Student.AvgGradeSort();
+                        asd.AvgGradeSort();
                         break;
                     case 8:
-                        Student.PrintByID();
+                        asd.PrintByID();
                         break;
                 }
 
