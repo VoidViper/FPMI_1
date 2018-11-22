@@ -46,7 +46,18 @@ namespace CourseWork
                 }
             }
         }
-        
+
+        public static double getAverageGrade(double[] arr)
+        {
+            double average = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                average = average + arr[i];
+            }
+            average = average / arr.Length;
+
+            return average;
+        }
 
     }
 }

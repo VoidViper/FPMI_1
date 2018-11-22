@@ -87,20 +87,16 @@ namespace CourseWork
             {
                 this.gradesString = this.gradesString + this.gradesBufferResult[i];
             }
-            this.contents = this.contents + this.gradesString;
+            //this.contents = this.contents + this.gradesString;
+            File.AppendText(this.gradesString);
             this.gradesString = "";
         }
         public void PrintAllStudentInfo()
         {
-            /*for (int i = 0; i < grades.Length; i++)//get average grade
-            {
-                
-            }
-            */
             Console.Write($"Student information:");
             Console.WriteLine($"Name: {this.Name}");
             Console.WriteLine($"Faculty number: {this.fNum}");
-            Console.WriteLine($"Average grade: {this.avgGrade}");
+            Console.WriteLine($"Average grade: {Functions.getAverageGrade(grades)}");
             Console.WriteLine("-----------------------------");
             
         }
