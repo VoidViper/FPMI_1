@@ -55,7 +55,21 @@ namespace CourseWork
         }
         public void PrintAllStudentInfo()
         {
-            Console.WriteLine("W.I.P");
+            string[] Name;
+            int[] fNum;
+            double[] grades, avgGrade;
+            for (int i = 0; i < grades.Length; i++)//get average grade
+            {
+                
+            }
+            for (int i = 0; i < /* broq linii v buffer.txt */; i++)
+            {
+                Console.Write($"Student {i} information:");
+                Console.WriteLine($"Name: {Name[i]}");
+                Console.WriteLine($"Faculty number: {fNum[i]}");
+                Console.WriteLine($"Average grade: {avgGrade[i]}");
+                Console.WriteLine("-----------------------------");
+            }
         }
         public void MakeFile() //Da se zapisva informaciqta ot drugite funkcii pod nqkuv format e.g Name: {name}, FakNum: {fakNum}, ..
         {
