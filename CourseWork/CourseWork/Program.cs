@@ -20,7 +20,7 @@ namespace CourseWork
                 Console.Clear();
                 Console.WriteLine("This program will let you do the following things:\n");
                 Console.WriteLine("1.Add a new student");
-                Console.WriteLine("2.Modify/Add grades to an existing student");
+                Console.WriteLine("2.Add grades to an existing student");
                 Console.WriteLine("3.Print all the students, their faculty number and their average grade");
                 Console.WriteLine("4.Make a file with all of the students' information");
                 Console.WriteLine("5.Read a file with student information");

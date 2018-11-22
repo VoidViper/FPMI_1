@@ -9,44 +9,36 @@ namespace CourseWork
 {
     class Student
     {
+        string Name, fNum;
+        string gradesBufferSource = "", gradesString = "";
+        string[] gradesBufferResult;
+        double[] grades = new double[40];
+        string contents;
+
         public void AddStudent()
         {
-            Console.Write("How many students would you like to add? : ");
-            var n = int.Parse(Console.ReadLine());
-            string[] Name = new string[n];
-            int[] fNum = new int[n];
-            string gradesBufferSource = "", gradesString = "";
-            string[] gradesBufferResult;
-            double[] grades = new double[40];
-            string[] contents = new string[n];
             bool correctGrade = false;
             StreamWriter myWriter = new StreamWriter("buffer.txt", true);
 
-            for (int i = 0; i < n; i++)
+            Console.Write($"Enter a name for the student: ");
+            Name = Console.ReadLine();
+            Console.Write($"Enter a faculty number for the student: ");
+            fNum = Console.ReadLine();
+            Console.Write($"Enter the student's grades with spaces in between them. [From 2 to 6 / max 40 grades]: ");
+            gradesBufferSource = Console.ReadLine();
+            gradesBufferResult = gradesBufferSource.Split(' ');
+
+            for (int z = 0; z < gradesBufferResult.Length; z++) //converting the string[] gradesBufferResult to double[] grades to make checks
             {
-                Console.Write($"Enter a name for student {i + 1}: ");
-                Name[i] = Console.ReadLine();
-                Console.Write($"Enter a faculty number for student {i + 1}: ");
-                fNum[i] = int.Parse(Console.ReadLine());
-                Console.Write($"Enter the student's grades with spaces in between them. [From 2 to 6 / max 40 grades]: ");
-                gradesBufferSource = Console.ReadLine();
-                gradesBufferResult = gradesBufferSource.Split(' ');
-
-                for (int z = 0; z < gradesBufferResult.Length; z++) //converting the string[] gradesBufferResult to double[] grades to make checks
-                {
-                    grades[z] = double.Parse(gradesBufferResult[z]);
-                }
-                for (int k = 0; k < gradesBufferResult.Length; k++) //converting the array of grades to a single string without spaces for storage in a file
-                {
-                    gradesString = gradesString + gradesBufferResult[k];
-                }
-                contents[i] = (Name[i] + "_" + fNum[i] + "_" + gradesString);
-                gradesString = "";
-                //File.AppendAllLines("buffer.txt", contents);
-                //File.AppendAllText("buffer.txt", contents[i]);
-                myWriter.WriteLine(contents[i]);
-
+                grades[z] = double.Parse(gradesBufferResult[z]);
             }
+            for (int k = 0; k < gradesBufferResult.Length; k++) //converting the array of grades to a single string without spaces for storage in a file
+            {
+                gradesString = gradesString + gradesBufferResult[k];
+            }
+            contents = Name + "_" + fNum + "_" + gradesString;
+            
+            myWriter.WriteLine(contents);
             myWriter.Close();
         }
         public void AddGrades()
@@ -55,21 +47,17 @@ namespace CourseWork
         }
         public void PrintAllStudentInfo()
         {
-            string[] Name;
-            int[] fNum;
-            double[] grades, avgGrade;
-            for (int i = 0; i < grades.Length; i++)//get average grade
+            /*for (int i = 0; i < grades.Length; i++)//get average grade
             {
                 
             }
-            for (int i = 0; i < /* broq linii v buffer.txt */; i++)
-            {
-                Console.Write($"Student {i} information:");
-                Console.WriteLine($"Name: {Name[i]}");
-                Console.WriteLine($"Faculty number: {fNum[i]}");
-                Console.WriteLine($"Average grade: {avgGrade[i]}");
-                Console.WriteLine("-----------------------------");
-            }
+            
+            Console.Write($"Student {i} information:");
+            Console.WriteLine($"Name: {Name[i]}");
+            Console.WriteLine($"Faculty number: {fNum[i]}");
+            Console.WriteLine($"Average grade: {avgGrade[i]}");
+            Console.WriteLine("-----------------------------");
+            */
         }
         public void MakeFile() //Da se zapisva informaciqta ot drugite funkcii pod nqkuv format e.g Name: {name}, FakNum: {fakNum}, ..
         {
@@ -96,27 +84,7 @@ namespace CourseWork
         }
         public void SortByID() //Implement Selection Sort Algorithm
         {
-            int smallestElement;
             
-            for (int i = 0; i < fNum.Length; i++)
-            {
-                smallestElement = i;
-                for (int index = i + 1; index < fNum.Length; index++)
-                {
-                    if (fNum[index] < fNum[smallestElement])
-                    {
-                        smallestElement = index;
-                    }
-                }
-                int temp = fNum[i];
-                fNum[i] = fNum[smallestElement];
-                fNum[smallestElement] = temp;
-            }
-            Console.WriteLine("Sorted");
-            for (int i = 0; i < fNum.Length; i++)
-            {
-                Console.WriteLine(fNum[i]);
-            }
         }
         public void AvgGradeSort() //Implement Insertion Sort Algorithm by average grade
         {
