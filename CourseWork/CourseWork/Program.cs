@@ -33,7 +33,7 @@ namespace CourseWork
                 switch (operation)
                 {
                     case 1:
-                        asd.AddStudent();
+                        asd.AddStudentInfo();
                         break;
                     case 2:
                         asd.AddGrades();
