@@ -9,7 +9,8 @@ namespace CourseWork
 {
     class Student
     {
-        string Name, fNum;
+        string Name;
+        int fNum;
         string gradesBufferSource = "", gradesString = "";
         string[] gradesBufferResult;
         double[] grades = new double[40];
@@ -24,7 +25,7 @@ namespace CourseWork
             Console.Write("Enter a name for the student: ");
             this.Name = Console.ReadLine();
             Console.Write("Enter a faculty number for the student: ");
-            this.fNum = Console.ReadLine();
+            this.fNum = int.Parse(Console.ReadLine());
             Console.Write("Enter how many grades would you like to enter: "); //In the future just call AddGrades();
             this.amountOfGrades = int.Parse(Console.ReadLine());
             Console.Write("Enter the student's grades with spaces in between them. [From 2 to 6]: ");
@@ -83,8 +84,10 @@ namespace CourseWork
             {
                 this.gradesString = this.gradesString + this.gradesBufferResult[i];
             }
-            //this.contents = this.contents + this.gradesString;
-            File.AppendText(this.gradesString);
+                   
+            //StreamWriter myWriter = new StreamWriter("buffer.txt", true);
+            //myWriter.WriteLine(this.gradesString);
+            //myWriter.Close();
             this.gradesString = "";
         }
         public void PrintAllStudentInfo()

@@ -11,7 +11,14 @@ namespace CourseWork
     {
         static void Main(string[] args)
         {
-            
+            if (!File.Exists("buffer.txt"))
+            {
+                File.Create("buffer.txt");
+            }
+            else
+            {
+                File.Open("buffer.txt", FileMode.Open, FileAccess.ReadWrite);
+            }
             
             bool doContinue = false;
 
