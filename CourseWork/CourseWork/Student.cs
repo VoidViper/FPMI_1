@@ -17,10 +17,6 @@ namespace CourseWork
         int amountOfGrades;
         double avgGrade = 0;
 
-        public void AddStudent() //redundant ?
-        {
-            AddStudentInfo();
-        }
         public void AddStudentInfo()
         {
             StreamWriter myWriter = new StreamWriter("buffer.txt", true);
