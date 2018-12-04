@@ -15,7 +15,7 @@ namespace n_ti_chlen
             a[0] = 2;
             a[1] = 4;
             a[2] = 6;
-            //proverka dali chisloto e >=3
+
             for (int i = 3; i < a.Length; i++)
             {
                 a[i] = (3 * a[i - 3]) + (4 * a[i - 2]) - (7 * a[i - 1]);
@@ -38,9 +38,24 @@ namespace n_ti_chlen
         {
             //Ai = 3 * Ai-3 + 4 * Ai-2 - 7 * Ai-1
             //A1 = 2, A2 = 4, A3 = 6
-            Console.Write("Enter how many elements you would like to show:");
-            int n = int.Parse(Console.ReadLine());
-            IterativeFunction(n);
+            bool doContinue = true;
+            do
+            {
+                Console.Write("Enter how many elements you would like to calculate (more than 3): ");
+                int n = int.Parse(Console.ReadLine());
+                if (n >= 3) //proverka dali chisloto e >=3
+                {
+                    IterativeFunction(n);
+                    doContinue = false;
+                }
+                else
+                {
+                    Console.WriteLine("The amount you have entered is not greater than or equal to 3. Please try again. ");
+                }
+
+            }
+            while (doContinue);
+            
             
         }
     }
