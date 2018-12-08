@@ -9,61 +9,68 @@ namespace Matrix_from_file
 {
     class Program
     {
-        static void MatrixCreateFromFile(int[,] matrix, int rows, int col)
+        static void Main(string[] args)
         {
-            if (File.Exists("matrix.txt"))
+            var rowSum = 0;
+            var colSum = 0;
+            Console.Write("Input the size of the square Matrix : ");
+            int n = int.Parse(Console.ReadLine());
+            string[,] matrixArr = new string[n, n];
+            Console.WriteLine("Input elements in the Matrix : ");
+            for (int row = 0; row < n; row++)
             {
-                File.Open("matix.txt", FileMode.Open, FileAccess.Read);
-            }
-            else
-            {
-                Console.WriteLine("The file matrix.txt does not exist.");
+                for (int col = 0; col < n; col++)
+                {
+                    Console.Write($"element - [{row},{col}] : ");
+                    matrixArr[row, col] = Console.ReadLine();
+                    if (matrixArr[row, col].Length == 0)
+                    {
+                        matrixArr[row, col] = "-1";
+                    }
+                }
             }
 
-        }
-        static void MatrixPrint(int[,] matrix, int rows, int col)
-        { 
-            Console.WriteLine("The matrix is: "); //Printing the matrix
-            for (int i = 0; i < rows; i++)
+            TextWriter saveTheMatrix = new StreamWriter("matrix.txt");
+            for (int row = 0; row < n; row++)
             {
-                for (int j = 0; j < col; j++)
+                for (int column = 0; column < n; column++)
                 {
-                    Console.Write(" " + matrix[i, j] + " ");
+                    saveTheMatrix.Write("row[{0}]", row);
+                    saveTheMatrix.Write("\tcolumn[{0}]", column);
+                    saveTheMatrix.Write("\t" + matrixArr[row, column]);
+                    saveTheMatrix.WriteLine();
+                }
+            }
+            saveTheMatrix.Close();
+
+            Console.WriteLine("The Matrix is : ");
+            for (int row = 0; row < n; row++)
+            {
+                for (int col = 0; col < n; col++)
+                {
+                    Console.Write($"{matrixArr[row, col]}");
+                    Console.Write(new string(' ', 4));
                 }
                 Console.WriteLine();
             }
-        }
-        static void Main(string[] args)
-        {
+
             
-            bool doContinue = false;
-
-            do
+            for (int row = 0; row < n; row++)
             {
-                int rows, col;
-                Console.Write("Enter the size of the square matrix: ");
-                int n = int.Parse(Console.ReadLine());
-                if (n > 0)
+                for (int col = 0; col < n; col++)
                 {
-                    rows = n;
-                    col = n;
-                    int[,] matrix = new int[rows, col]
-;                   MatrixCreate(matrix, rows, col);
+                    if (row % 2 != 0)
+                    {
+                        rowSum += Convert.ToInt32(matrixArr[row, col]);
+                    }
+                    if (col % 2 == 0)
+                    {
+                        colSum += Convert.ToInt32(matrixArr[row, col]);
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("You have entered an invalid size for the square matrix. Try again with an integer greater than 0");
-                }
-
-                Console.Write("Do you want to continue? [y/n]: ");
-                if (Console.ReadLine() == "y")
-                {
-                    doContinue = true;
-                    Console.Clear();
-                }
-                else doContinue = false;
             }
-            while (doContinue);
+            Console.WriteLine($"Sum of the elements of the elements in the even rows in the matrix : {rowSum}");
+            Console.WriteLine($"Sum of the elements of the elements in the the odd columns in the matrix : {colSum}");
         }
     }
 }

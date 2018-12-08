@@ -25,7 +25,7 @@ namespace n_ti_chlen
                 Console.WriteLine(a[i]);
             }
         }
-        /*static void RecursiveFunction(int n)
+        static void RecursiveFunction(int n)
         {
             Console.WriteLine("Recursive:");
             int[] a = new int[n];
@@ -33,7 +33,7 @@ namespace n_ti_chlen
             a[2] = 4;
             a[3] = 6;
             
-        }*/
+        }
         static void Main(string[] args)
         {
             //Ai = 3 * Ai-3 + 4 * Ai-2 - 7 * Ai-1
@@ -43,16 +43,33 @@ namespace n_ti_chlen
             {
                 Console.Write("Enter how many elements you would like to calculate (more than 3): ");
                 int n = int.Parse(Console.ReadLine());
-                if (n >= 3) //proverka dali chisloto e >=3
+                Console.WriteLine("Do you want to run the irrative funciton(1) or the recursive function(2)[e.g]:1");
+                int p = int.Parse(Console.ReadLine());
+                if (p == 1)
                 {
-                    IterativeFunction(n);
-                    doContinue = false;
+                    if (n >= 3)
+                    {
+                        IterativeFunction(n);
+                        doContinue = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("The amount you have entered is not greater than or equal to 3. Please try again. ");
+                    }
                 }
-                else
+                else if (p == 2)
                 {
-                    Console.WriteLine("The amount you have entered is not greater than or equal to 3. Please try again. ");
+                    if (n >= 3)
+                    {
+                        RecursiveFunction(n);
+                        doContinue = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("The amount you have entered is not greater than or equal to 3. Please try again. ");
+                    }
                 }
-
+                else Console.WriteLine("Invalid input. Try again.");
             }
             while (doContinue);
             
