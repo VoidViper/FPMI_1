@@ -1,9 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Matrix_from_file
 {
@@ -11,66 +7,51 @@ namespace Matrix_from_file
     {
         static void Main(string[] args)
         {
-            var rowSum = 0;
-            var colSum = 0;
             Console.Write("Input the size of the square Matrix : ");
             int n = int.Parse(Console.ReadLine());
-            string[,] matrixArr = new string[n, n];
-            Console.WriteLine("Input elements in the Matrix : ");
-            for (int row = 0; row < n; row++)
+            int[,] matrix = new int[n, n];
+            int sumOddElements = 0;
+            int sumEvenElements = 0;
+
+            for (int row = 0; row < n; row++) //Initializing the elements in the matrix with -1
             {
                 for (int col = 0; col < n; col++)
                 {
-                    Console.Write($"element - [{row},{col}] : ");
-                    matrixArr[row, col] = Console.ReadLine();
-                    if (matrixArr[row, col].Length == 0)
-                    {
-                        matrixArr[row, col] = "-1";
-                    }
+                    matrix[row, col] = -1;
                 }
             }
 
-            TextWriter saveTheMatrix = new StreamWriter("matrix.txt");
-            for (int row = 0; row < n; row++)
+            if (File.Exists("matrix.txt"))
             {
-                for (int column = 0; column < n; column++)
-                {
-                    saveTheMatrix.Write("row[{0}]", row);
-                    saveTheMatrix.Write("\tcolumn[{0}]", column);
-                    saveTheMatrix.Write("\t" + matrixArr[row, column]);
-                    saveTheMatrix.WriteLine();
-                }
-            }
-            saveTheMatrix.Close();
+                StreamReader myReader = new StreamReader("matrix.txt"); //Creating a StreamReader to read all of the contents of the file
+                myReader = File.OpenText("matrix.txt");
+                string content = myReader.ReadToEnd();
+                myReader.Close();
 
-            Console.WriteLine("The Matrix is : ");
-            for (int row = 0; row < n; row++)
-            {
-                for (int col = 0; col < n; col++)
-                {
-                    Console.Write($"{matrixArr[row, col]}");
-                    Console.Write(new string(' ', 4));
-                }
-                Console.WriteLine();
-            }
+                string[] matrixElements = content.Split(new string[] { "\t" }, StringSplitOptions.None);
 
-            
-            for (int row = 0; row < n; row++)
-            {
-                for (int col = 0; col < n; col++)
+                for (int i = 2; i < matrixElements.Length; i += 3)
                 {
-                    if (row % 2 != 0)
-                    {
-                        rowSum += Convert.ToInt32(matrixArr[row, col]);
-                    }
-                    if (col % 2 == 0)
-                    {
-                        colSum += Convert.ToInt32(matrixArr[row, col]);
-                    }
+                    if (matrixElements[i] == "") matrixElements[i] = "-1";
                 }
+
+                int[] intElements = new int[matrixElements.Length];
+                for (int i = 0; i < matrixElements.Length; i++)
+                {
+                    intElements[i] = int.Parse(matrixElements[i]);
+                }
+
+                for (int i = 0; i < intElements.Length; i++)
+                {
+                    if (intElements[i] % 2 == 0) sumEvenElements += intElements[i];
+                    else sumOddElements += intElements[i];
+                }
+                Console.WriteLine($"The sum of the even elements is {sumEvenElements}");
+                Console.WriteLine($"The sum of the odd elements is {sumOddElements}");
+
+                //To do: Sum of elements in even rows and odd cols
             }
-            Console.WriteLine($"Sum of the elements of the elements in the even rows in the matrix : {rowSum}");
-            Console.WriteLine($"Sum of the elements of the elements in the the odd columns in the matrix : {colSum}");
+            else Console.WriteLine("The file matrix.txt does not exist.");
         }
     }
 }
