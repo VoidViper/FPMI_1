@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rational_Numbers", "Rational_Numbers\Rational_Numbers.csproj", "{AB9170CF-EB2F-4638-9549-A78E34666ECE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factoriel", "Factoriel\Factoriel.csproj", "{116F033B-5177-415D-9F82-BB3B018D4E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoi", "TowerOfHanoi\TowerOfHanoi.csproj", "{F7D93579-2F51-4D7E-97C4-5ECA1F39AFE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +181,14 @@ Global
 		{AB9170CF-EB2F-4638-9549-A78E34666ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB9170CF-EB2F-4638-9549-A78E34666ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB9170CF-EB2F-4638-9549-A78E34666ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{116F033B-5177-415D-9F82-BB3B018D4E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116F033B-5177-415D-9F82-BB3B018D4E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116F033B-5177-415D-9F82-BB3B018D4E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116F033B-5177-415D-9F82-BB3B018D4E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D93579-2F51-4D7E-97C4-5ECA1F39AFE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D93579-2F51-4D7E-97C4-5ECA1F39AFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D93579-2F51-4D7E-97C4-5ECA1F39AFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D93579-2F51-4D7E-97C4-5ECA1F39AFE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

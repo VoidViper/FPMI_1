@@ -10,7 +10,6 @@ namespace n_ti_chlen
     {
         static void IterativeFunction(int n)
         {
-            Console.WriteLine("Iterative:");
             int[] a = new int[n];
             a[0] = 2;
             a[1] = 4;
@@ -25,29 +24,21 @@ namespace n_ti_chlen
                 Console.WriteLine(a[i]);
             }
         }
-        static void RecursiveFunction(int n, int A1, int A2, int An)
+        static int RecursiveFunction(int n)
         {
-            int val = An;
-            An = (3 * A1) + (4 * A2) - (7 * An);
-            A1 = A2;
-            A2 = val;
-            n--;
-            if (n == 3)
-            {
-                Console.WriteLine(An);
-                return;
-            }
-            RecursiveFunction(n, A1, A2, An);
+            if (n <= 3) return 2 * n;
+            return 3 * RecursiveFunction(n - 3) + 4 * RecursiveFunction(n - 2) - 7 * RecursiveFunction(n - 1);           
         }
         static void Main(string[] args)
         {
             //Ai = 3 * Ai-3 + 4 * Ai-2 - 7 * Ai-1
             //A1 = 2, A2 = 4, A3 = 6
-            Console.Write("Enter how many elements you would like to calculate (more than 3): ");
+            Console.WriteLine("This program find the n-th element with the formula An = 3 * An-3 + 4 * An-2 - 7 * An-1");
+            Console.Write("Which element would you like to calculate ?: ");
             int n = int.Parse(Console.ReadLine());
             Console.Write("Do you want to run the irrative funciton(1) or the recursive function(2)[e.g 1]: ");
-            int p = int.Parse(Console.ReadLine());
-            if (p == 1)
+            int input = int.Parse(Console.ReadLine());
+            if (input == 1)
             {
                 if (n >= 3)
                 {
@@ -58,16 +49,9 @@ namespace n_ti_chlen
                     Console.WriteLine("The amount you have entered is not greater than or equal to 3. Please try again. ");
                 }
             }
-            else if (p == 2)
+            else if (input == 2)
             {
-                if (n >= 3)
-                {
-                    RecursiveFunction(n, 2, 4, 6);
-                }
-                else
-                {
-                    Console.WriteLine("The amount you have entered is not greater than or equal to 3. Please try again. ");
-                }
+                Console.WriteLine(RecursiveFunction(n));
             }
             else Console.WriteLine("Invalid input.");
         }
