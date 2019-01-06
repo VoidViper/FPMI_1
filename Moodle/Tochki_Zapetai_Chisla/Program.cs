@@ -11,7 +11,7 @@ namespace Tochki_Zapetaiki_Chisla
             do
             {
                 Console.Clear();
-     
+
                 Console.Write("Enter the path to the file: ");
                 string path = Console.ReadLine();
                 int dots = 0, commas = 0, numbers = 0;
@@ -21,7 +21,7 @@ namespace Tochki_Zapetaiki_Chisla
                 {
                     using (StreamReader myReader = new StreamReader(path))
                     {
-                        while (myReader.Peek() >= -1)
+                        while (myReader.Peek() > -1)
                         {
                             myReader.Read(buffer, 0, 1);
 
