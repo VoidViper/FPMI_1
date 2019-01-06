@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix_from_file", "Matrix_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "n-ti_chlen", "n-ti_chlen\n-ti_chlen.csproj", "{810B131A-BBC2-492E-90A2-EDB781655169}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tochki_Zapetaiki_Chisla", "Tochki_Zapetaiki_Chisla\Tochki_Zapetaiki_Chisla.csproj", "{2A9B2572-343D-410F-834B-56FC8166CC9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{810B131A-BBC2-492E-90A2-EDB781655169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810B131A-BBC2-492E-90A2-EDB781655169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810B131A-BBC2-492E-90A2-EDB781655169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A9B2572-343D-410F-834B-56FC8166CC9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A9B2572-343D-410F-834B-56FC8166CC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A9B2572-343D-410F-834B-56FC8166CC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A9B2572-343D-410F-834B-56FC8166CC9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
