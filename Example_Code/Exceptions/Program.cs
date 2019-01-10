@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Exceptions
 {
@@ -10,34 +9,52 @@ namespace Exceptions
             bool doContinue = false;
             do
             {
-                try
+                try 
                 {
-                    Console.Write("First number: ");
-                    int a = int.Parse(Console.ReadLine());
-                    Console.Write("Second number: ");
-                    int b = int.Parse(Console.ReadLine());
+                    double num1, num2;
+                    Console.Write("Enter the first number: ");
+                    num1 = double.Parse(Console.ReadLine());
+                    Console.Write("Enter the second number: ");
+                    num2 = double.Parse(Console.ReadLine());
+                    Console.Write("Enter an operation [+,-,/,sqrt,]");
+                    string operation = Console.ReadLine();
 
-                    if (b == 42) throw new DivideByFourtyTwoException();
-
-                    int r = a / b;
-
-                    Console.WriteLine($"Result: {r}");
-                }
-                catch (DivideByZeroException e)
-                {
-                    Console.WriteLine("Error! Check the log.");
-                    Logger.WriteToLog(e.Message);
+                    switch (operation)
+                    {
+                        case "+":
+                            Console.WriteLine(num1 + num2);
+                            break;
+                        case "-":
+                            Console.WriteLine(num1 - num2);
+                            break;
+                        case "*":
+                            Console.WriteLine(num1 * num2);
+                            break;
+                        case "/":
+                            if (num2.Equals(0)) throw new DoubleDevideByZeroException();
+                            else Console.WriteLine(num1 / num2);
+                            break;
+                        case "sqrt":
+                            Console.WriteLine("Square root of num1: " + Math.Sqrt(num1));
+                            Console.WriteLine("Square root of num2: " + Math.Sqrt(num2));
+                            break;
+                    }
                 }
                 catch (FormatException e)
                 {
-                    Console.WriteLine("Error! Check the log.");
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Refer to the calculator.log file for more information.");
                     Logger.WriteToLog(e.Message);
+                    Logger.WriteToLog(e.StackTrace);
                 }
-                catch (DivideByFourtyTwoException e)
+                catch (DoubleDevideByZeroException e)
                 {
-                    Console.WriteLine("Error! Check the log.");
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Refer to the calculator.log file for more information.");
                     Logger.WriteToLog(e.Message);
+                    Logger.WriteToLog(e.StackTrace);
                 }
+
                 Console.Write("Do you want to continue? [y/n]: ");
                 if (Console.ReadLine() == "y") doContinue = true;
                 else doContinue = false;
