@@ -15,7 +15,7 @@ namespace Matrix_From_File
             decimal[,] matrix = new decimal[rows, cols];
             myReader.Close();
 
-            Menu.PrintMenu(path, ref matrix);
+            Menu.PrintMenu(path,ref matrix);
         }
     }
 }

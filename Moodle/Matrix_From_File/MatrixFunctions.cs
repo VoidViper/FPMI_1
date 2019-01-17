@@ -15,7 +15,7 @@ namespace Matrix_From_File
             }
         }
 
-        public static bool CheckIdentity(decimal[,] matrix) //W.I.P
+        public static bool CheckIdentity(decimal[,] matrix)
         {
             bool isEdinichna = true;
             if (matrix.GetLength(0) == matrix.GetLength(1))
@@ -39,12 +39,23 @@ namespace Matrix_From_File
                 if (isEdinichna) return true;
                 if (!isEdinichna) return false;
             }
-            else return false;
+            return false;
         }
 
         public static decimal SumNegativeOnAntiDiagonal(decimal[,] matrix)
         {
-            return 0;
+            decimal sum = 0;
+            if (matrix.GetLength(0) == matrix.GetLength(1))
+            {
+                int k = 0;
+                for (int i = matrix.GetLength(0) - 1; i > 0; i--)
+                {
+                    if (matrix[k,i] < 0 )
+                        sum += matrix[k,i];
+                    k++;
+                }
+            }
+            return sum;
         }
 
         public static void NormalizeRows(ref decimal[,] matrix)
@@ -61,6 +72,7 @@ namespace Matrix_From_File
                     if (matrix[i, j] != 0) matrix[i, j] = Convert.ToDecimal(Convert.ToDouble(matrix[i, j]) / SqrtSumOfSquaredElements);
                 }
             }
+           PrintMatrix(matrix);
         }
 
         public static void SortMatrix(ref decimal[,] matrix)
