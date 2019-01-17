@@ -28,20 +28,20 @@ namespace Matrix_From_File
                         MatrixFunctions.PrintMatrix(matrix);
                         break;
                     case '2':
-                        MatrixFunctions.CheckIdentity();
+                        if (MatrixFunctions.CheckIdentity(matrix)) 
+                            Console.WriteLine("Matricata e edinichna");
+                        else Console.WriteLine("Matricata ne e edinichna");
                         break;
                     case '3':
-                        MatrixFunctions.SumNegativeOnAntiDiagonal();
+                        Console.WriteLine(MatrixFunctions.SumNegativeOnAntiDiagonal(matrix)); 
                         break;
                     case '4':
-                        MatrixFunctions.NormalizeRows();
+                        MatrixFunctions.NormalizeRows(ref matrix);
                         break;
                     case '5':
-                        MatrixFunctions.SortMatrix();
+                        MatrixFunctions.SortMatrix(ref matrix);
                         break;
                 }
-
-
 
                 Console.Write("Do you want to continue ? [y/n]");
                 char op = char.Parse(Console.ReadLine());
