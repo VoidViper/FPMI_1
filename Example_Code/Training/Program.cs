@@ -25,7 +25,7 @@ namespace Training
                 Console.Write(buffer[i] + " ");
             }
             Console.WriteLine();
-
+            //
             return counter;
 
         }
