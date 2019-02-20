@@ -43,7 +43,7 @@ namespace Matrix_From_File
                         break;
                 }
 
-                Console.Write("Do you want to continue ? [y/n]");
+                Console.Write("Do you want to continue ? [y/n] ");
                 char op = char.Parse(Console.ReadLine());
                 if (op == 'y') doContinue = true;
                 else doContinue = false;

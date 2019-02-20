@@ -1,26 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Training
 {
     class Program
     {
+        //print out the censored sentence
+        static int Censorship(string sentence,string word)
+        {
+            string[] buffer = sentence.Split(' '); //идеята на тоя масив е да държи думите от изречението една по една без интервали
+
+            string newWord = new string('*', word.Length); //тук правим дума, която е със същия брой символи като думата, която сме приели обаче е само *
+            int counter = 0; //obviously брояча, който ще върнем
+
+            for (int i = 0; i < buffer.Length; i++) // for loop, който обхожда всеки един елемент от масива buffer, който ни държи думите от изречението
+            {
+                if (buffer[i] == word) //проверяваме дали всяка дума от изречението съвпада с думата, която сме приели от потребителя
+                {
+                    buffer[i] = newWord; //присвояваме думата със звездички на мястото на елемент-а, който съвпада с думата от потребителя
+                    counter++; //self-explanatory
+                }
+            }
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                Console.Write(buffer[i] + " ");
+            }
+            Console.WriteLine();
+
+            return counter;
+
+        }
         static void Main(string[] args)
         {
-            double x1 = double.Parse(Console.ReadLine());
-            double y1 = double.Parse(Console.ReadLine());
-            double x2 = double.Parse(Console.ReadLine());
-            double y2 = double.Parse(Console.ReadLine());
-            double width = Math.Max(x1, x2) - Math.Min(x1, x2);
-            double height = Math.Max(y1, y2) - Math.Min(y1, y2);
-            Console.WriteLine("Area = {0}", width * height);
-            Console.WriteLine("Perimeter = {0}", 2 * (width + height));
+            Console.Write("Enter a sentence: ");
+            string sentence = Console.ReadLine();
+            Console.Write("Enter a word: ");
+            string word = Console.ReadLine();
 
-
-            Console.ReadLine();
+            Console.WriteLine(Censorship(sentence,word));
         }
     }
 }
