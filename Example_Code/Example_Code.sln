@@ -75,6 +75,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serilizati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Posledna_Lekciq", "Posledna_Lekciq\Posledna_Lekciq.csproj", "{15C16897-10C0-4E4D-B73E-739BD8D3B005}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pointers", "Pointers\Pointers.csproj", "{7EFF82C8-8D37-461E-8042-9D3291F4B77F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remove_Duplicate_Chars", "Remove_Duplicate_Chars\Remove_Duplicate_Chars.csproj", "{EB2F4A25-F249-4945-A73E-1546C5431EB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +229,14 @@ Global
 		{15C16897-10C0-4E4D-B73E-739BD8D3B005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15C16897-10C0-4E4D-B73E-739BD8D3B005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15C16897-10C0-4E4D-B73E-739BD8D3B005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFF82C8-8D37-461E-8042-9D3291F4B77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFF82C8-8D37-461E-8042-9D3291F4B77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFF82C8-8D37-461E-8042-9D3291F4B77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFF82C8-8D37-461E-8042-9D3291F4B77F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2F4A25-F249-4945-A73E-1546C5431EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2F4A25-F249-4945-A73E-1546C5431EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2F4A25-F249-4945-A73E-1546C5431EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2F4A25-F249-4945-A73E-1546C5431EB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

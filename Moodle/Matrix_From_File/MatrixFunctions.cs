@@ -77,7 +77,41 @@ namespace Matrix_From_File
 
         public static void SortMatrix(ref decimal[,] matrix)
         {
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                bool sorted;
+                decimal temp = 0;
+                do
+                {
+                    sorted = true;
+                    for (int row = 1; row < matrix.GetLength(0); row++)
+                    {
+                        if (col % 2 == 0)
+                        {
+                            if (matrix[row - 1, col] > matrix[row, col])
+                            {
+                                temp = matrix[row, col];
+                                matrix[row, col] = matrix[row - 1, col];
+                                matrix[row - 1, col] = temp;
+                                sorted = false;
+                            }
+                        }
+                        else
+                        {
+                            if (matrix[row-1, col] < matrix[row, col])
+                            {
+                                temp = matrix[row - 1, col];
+                                matrix[row - 1, col] = matrix[row, col];
+                                matrix[row, col] = temp;
+                                sorted = false;
+                             }
+                        }
+                    }
+                }
+                while (!sorted);
 
+            }
+            PrintMatrix(matrix);
         }
     }
 }
