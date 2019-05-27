@@ -1,46 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Training
 {
     class Program
     {
-        static bool Function(decimal[,] matrix, out decimal[] values)
-        {
-            values = new decimal[3];
-            values[0] = matrix[0,0];
-            values[1] = 0;
-            values[2] = 0;
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
-                    if (values[0]>matrix[i,j])
-                    {
-                        values[0] = matrix[i, j];
-                        values[1] = Convert.ToDecimal(i);
-                        values[2] = Convert.ToDecimal(j);
-                    }
-                }
-            }
-            if (values[0] > 0) return true;
-            return false;
-        }
         static void Main(string[] args)
         {
-            decimal[] values = new decimal[3];
-            decimal[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            
-            if(Function(matrix, out values) == true)
-            {
-                for (int i = 0; i < values.Length; i++)
-                {
-                    Console.WriteLine(values[i]);
-                }
-            }
+            double x1 = double.Parse(Console.ReadLine());
+            double y1 = double.Parse(Console.ReadLine());
+            double x2 = double.Parse(Console.ReadLine());
+            double y2 = double.Parse(Console.ReadLine());
+            double width = Math.Max(x1, x2) - Math.Min(x1, x2);
+            double height = Math.Max(y1, y2) - Math.Min(y1, y2);
+            Console.WriteLine("Area = {0}", width * height);
+            Console.WriteLine("Perimeter = {0}", 2 * (width + height));
+
+
+            Console.ReadLine();
         }
     }
 }
